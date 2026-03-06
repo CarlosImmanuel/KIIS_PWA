@@ -29,7 +29,7 @@ export default function App() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full max-w-sm space-y-6"
+          className="w-full max-w-sm md:max-w-md lg:max-w-lg space-y-6"
         >
           {/* Logo and Header */}
           <div className="text-center space-y-4">
@@ -42,7 +42,7 @@ export default function App() {
               <img
                 src={logoImage}
                 alt="KIS Logo"
-                className="h-16 w-auto hover:scale-105 transition-all duration-300"
+                className="h-16 md:h-20 lg:h-24 w-auto hover:scale-105 transition-all duration-300"
               />
             </motion.div>
           </div>
@@ -52,12 +52,12 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 space-y-5"
+            className="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8 lg:p-10 space-y-5"
           >
             <form onSubmit={handleLogin} className="space-y-4">
               {/* Username Input */}
               <div className="space-y-2">
-                <label htmlFor="username" className="text-sm font-medium text-slate-700">
+                <label htmlFor="username" className="text-sm md:text-base font-medium text-slate-700">
                   Single Account Username
                 </label>
                 <div className="relative group">
@@ -68,14 +68,14 @@ export default function App() {
                     placeholder="Masukkan username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="pl-10 h-12 bg-white border-slate-300 focus:border-[#5b468a] focus:ring-[#5b468a] shadow-sm hover:shadow-md transition-all duration-300"
+                    className="pl-10 h-12 md:h-14 text-base bg-white border-slate-300 focus:border-[#5b468a] focus:ring-[#5b468a] shadow-sm hover:shadow-md transition-all duration-300"
                   />
                 </div>
               </div>
 
               {/* Password Input */}
               <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium text-slate-700">
+                <label htmlFor="password" className="text-sm md:text-base font-medium text-slate-700">
                   Password
                 </label>
                 <div className="relative group">
@@ -86,7 +86,7 @@ export default function App() {
                     placeholder="Masukkan password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="pl-10 pr-12 h-12 bg-white border-slate-300 focus:border-[#5b468a] focus:ring-[#5b468a] shadow-sm hover:shadow-md transition-all duration-300"
+                    className="pl-10 pr-12 h-12 md:h-14 text-base bg-white border-slate-300 focus:border-[#5b468a] focus:ring-[#5b468a] shadow-sm hover:shadow-md transition-all duration-300"
                   />
                   <button
                     type="button"
@@ -105,7 +105,7 @@ export default function App() {
               {/* Login Button */}
               <Button
                 type="submit"
-                className="w-full h-12 bg-[#5b468a] hover:bg-[#4a3670] text-white font-medium transition-all duration-300 hover:scale-[1.02]"
+                className="w-full h-12 md:h-14 text-base md:text-lg bg-[#5b468a] hover:bg-[#4a3670] text-white font-medium transition-all duration-300 hover:scale-[1.02]"
               >
                 Login
               </Button>
@@ -120,35 +120,35 @@ export default function App() {
             className="space-y-4"
           >
             {/* Institution Logos */}
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-slate-200">
-              <div className="flex items-center justify-center gap-4">
+            <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-slate-200">
+              <div className="flex items-center justify-center gap-4 md:gap-6">
                 {/* IBIK Logo */}
                 <img 
                   src={ibikLogo} 
                   alt="Institut Bisnis & Informatika Kesatuan" 
-                  className="h-10 w-auto"
+                  className="h-10 md:h-12 lg:h-14 w-auto"
                 />
                 
                 {/* Divider */}
-                <div className="h-10 w-px bg-slate-200"></div>
+                <div className="h-10 md:h-12 lg:h-14 w-px bg-slate-200"></div>
                 
                 {/* Kampus Merdeka Logo */}
                 <img 
                   src={kampusMerdekaLogo} 
                   alt="Kampus Merdeka Indonesia Jaya" 
-                  className="h-10 w-auto"
+                  className="h-10 md:h-12 lg:h-14 w-auto"
                 />
               </div>
             </div>
 
             {/* Contact Info */}
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-slate-200 space-y-2 text-xs text-slate-700 text-center">
+            <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg border border-slate-200 space-y-2 text-xs md:text-sm text-slate-700 text-center">
               <div className="flex items-center justify-center gap-2">
-                <MapPin className="size-4 flex-shrink-0 text-[#5b468a]" />
+                <MapPin className="size-4 md:size-5 flex-shrink-0 text-[#5b468a]" />
                 <p>Jalan Ranggagading No.1 Bogor 16123</p>
               </div>
               <div className="flex items-center justify-center gap-2">
-                <Mail className="size-4 flex-shrink-0 text-[#5b468a]" />
+                <Mail className="size-4 md:size-5 flex-shrink-0 text-[#5b468a]" />
                 <a href="mailto:info@ibik.ac.id" className="hover:text-[#5b468a] transition-colors hover:underline">
                   info@ibik.ac.id
                 </a>
@@ -159,7 +159,7 @@ export default function App() {
             <div className="flex justify-center">
               <a
                 href="#"
-                className="px-5 py-2 bg-white hover:bg-slate-50 rounded-lg transition-all duration-300 hover:scale-105 shadow-md border border-slate-200 text-xs font-semibold text-[#5b468a]"
+                className="px-5 py-2 md:px-6 md:py-3 bg-white hover:bg-slate-50 rounded-lg transition-all duration-300 hover:scale-105 shadow-md border border-slate-200 text-xs md:text-sm font-semibold text-[#5b468a]"
               >
                 www.ibik.ac.id
               </a>

@@ -37,7 +37,7 @@ export function RekapKuliahView({ onDetailClick }: RekapKuliahViewProps) {
       mataKuliah: 'LAB. PENGANTAR TEKNILOGI INFORMASI',
       sks: 0,
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Eka Efthadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       hari: 'RABU',
       jam: '15:45:00',
       ruangan: '215',
@@ -159,7 +159,7 @@ export function RekapKuliahView({ onDetailClick }: RekapKuliahViewProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#5b468a]/5 to-white pb-24">
-      <div className="px-4 py-6 space-y-6">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-6 space-y-6">
         {/* Student Info Card */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-5">
           <div className="flex items-start gap-3">

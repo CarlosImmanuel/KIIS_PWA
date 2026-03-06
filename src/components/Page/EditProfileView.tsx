@@ -8,7 +8,6 @@ interface EditProfileViewProps {
 
 export function EditProfileView({ }: EditProfileViewProps) {
   const [formData, setFormData] = useState({
-    // Info Mahasiswa (Read-only)
     nama: 'CARLOS IMMANUEL TAMPUBOLON',
     npm: '222310064',
     angkatan: '2022/2023',
@@ -17,7 +16,6 @@ export function EditProfileView({ }: EditProfileViewProps) {
     programStudi: 'Teknologi Informasi',
     kelas: 'TI 2-5 PA',
     
-    // Biodata
     namaMahasiswa: 'CARLOS IMMANUEL TAMPUBOLON',
     tempatLahir: 'KOTA TANGERANG',
     tanggalLahir: '2004-05-12',
@@ -28,7 +26,6 @@ export function EditProfileView({ }: EditProfileViewProps) {
     namaIbu: '',
     namaAyah: '',
     
-    // Alamat & Kontak
     alamatAsal: 'BUKIT PANORAMA, PAKUNCEN HIJAU, SADIA PARK NO A5',
     alamatDomisili: '',
     telpSeluler: '',
@@ -36,7 +33,6 @@ export function EditProfileView({ }: EditProfileViewProps) {
     emailUtama: '',
     emailLainnya: '',
     
-    // Pekerjaan
     tempatKerja: '',
     jabatan: '',
     alamatKerja: '',
@@ -52,13 +48,12 @@ export function EditProfileView({ }: EditProfileViewProps) {
   };
 
   const handleSave = () => {
-    // Logic untuk save profile
     alert('Profil berhasil disimpan!');
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#5b468a]/5 to-white pb-24">
-      <div className="px-4 py-5 space-y-5">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-5 space-y-5">
         {/* Photo Profile Section */}
         <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-5">
           <div className="flex flex-col items-center">

@@ -319,7 +319,7 @@ export function RegistrasiMataKuliahView({
       <>
         <div className="pb-24 bg-gray-50 min-h-screen">
           {/* Student Info Card */}
-          <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] px-4 pt-4 pb-6">
+          <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-6">
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
               <h2 className="text-center font-bold text-base text-[#5b468a] mb-4">
                 RENCANA STUDI SEMESTER GANJIL 2025/2026
@@ -393,7 +393,7 @@ export function RegistrasiMataKuliahView({
           </div>
 
           {/* Warning Message */}
-          <div className="px-4 pt-4">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-2">
             <div className="bg-red-50 border-2 border-red-200 rounded-xl p-3">
               <p className="text-xs font-bold text-red-600 text-center">
                 KLIK PREVIEW JADWAL DI BAWAH INI UNTUK MENGECEK
@@ -403,7 +403,7 @@ export function RegistrasiMataKuliahView({
           </div>
 
           {/* Preview Jadwal Button */}
-          <div className="px-4 pt-3">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-3">
             <button
               onClick={() => setShowPreviewJadwal(true)}
               className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
@@ -414,7 +414,7 @@ export function RegistrasiMataKuliahView({
           </div>
 
           {/* Tabs */}
-          <div className="px-4 pt-4">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4">
             <div className="flex gap-1.5 justify-between">
               {[1, 2, 3, 4].map((tab) => (
                 <button
@@ -433,7 +433,7 @@ export function RegistrasiMataKuliahView({
           </div>
 
           {/* Mata Kuliah yang Ditawarkan */}
-          <div className="px-4 pt-4">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4">
             <h3 className="font-bold text-sm text-gray-800 mb-3">
               Mata Kuliah yang Ditawarkan
             </h3>
@@ -501,7 +501,7 @@ export function RegistrasiMataKuliahView({
           </div>
 
           {/* Mata Kuliah yang Diambil */}
-          <div className="px-4 pt-4 pb-6">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-2">
             <h3 className="font-bold text-sm text-gray-800 mb-3">
               Mata Kuliah yang Diambil
             </h3>
@@ -590,7 +590,7 @@ export function RegistrasiMataKuliahView({
           </div>
 
           {/* Legend */}
-          <div className="px-4 pb-6">
+          <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-2">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
               <p className="text-xs font-semibold text-gray-700 mb-2">
                 Keterangan:
@@ -749,7 +749,7 @@ export function RegistrasiMataKuliahView({
     <>
       <div className="pb-24 bg-gray-50 min-h-screen">
         {/* Student Info Card */}
-        <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] px-4 pt-4 pb-6">
+        <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-6">
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
             <h2 className="text-center font-bold text-base text-[#5b468a] mb-4">
               RENCANA STUDI SEMESTER GANJIL 2025/2026
@@ -841,7 +841,7 @@ export function RegistrasiMataKuliahView({
         </div>
 
         {/* Table Mata Kuliah */}
-        <div className="px-4 pt-4 pb-6">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-6">
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
             <table className="w-full">
               <thead>
@@ -917,7 +917,7 @@ export function RegistrasiMataKuliahView({
         </div>
 
         {/* Status & Actions */}
-        <div className="px-4 pb-6 space-y-3">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pb-6 space-y-3">
           <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4">
             <div className="flex items-start gap-2">
               <FileText className="w-5 h-5 text-green-600 flex-shrink-0" />

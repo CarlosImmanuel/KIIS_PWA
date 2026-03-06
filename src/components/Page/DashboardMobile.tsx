@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, ChevronLeft } from "lucide-react";
 import { useState, useEffect } from "react";
 import kiisLogoPutih from "../../assets/Images/kisLogoPutih.png";
 import { Sidebar } from "../Sidebar";
@@ -71,6 +71,33 @@ export function DashboardMobile() {
     navigate(view, tab);
   };
 
+  // Handle back button click based on current view
+  const handleBackClick = () => {
+    const backRoutes: Record<string, { view: ViewType; tab: string }> = {
+      editProfile: { view: "dashboard", tab: "home" },
+      ubahPassword: { view: "dashboard", tab: "home" },
+      nilai: { view: "dashboard", tab: "home" },
+      rekapKuliah: { view: "dashboard", tab: "home" },
+      detailRekapKuliah: { view: "rekapKuliah", tab: "rekapKuliah" },
+      jadwalMahasiswa: { view: "dashboard", tab: "home" },
+      jadwalUjianMahasiswa: { view: "dashboard", tab: "home" },
+      kuesioner: { view: "jadwalUjianMahasiswa", tab: "jadwal" },
+      berandaRegistrasi: { view: "dashboard", tab: "home" },
+      registrasiMataKuliah: { view: "dashboard", tab: "home" },
+      statusRegistrasi: { view: "dashboard", tab: "home" },
+      tagihanRegistrasi: { view: "dashboard", tab: "home" },
+      detailTagihan: { view: "tagihanRegistrasi", tab: "registrasiMataKuliah" },
+      registrasiUjianSusulan: { view: "dashboard", tab: "home" },
+      pendaftaranWisuda: { view: "dashboard", tab: "home" },
+      pengajuanBebasPustaka: { view: "dashboard", tab: "home" },
+    };
+
+    const backRoute = backRoutes[currentView];
+    if (backRoute) {
+      navigate(backRoute.view, backRoute.tab);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#5b468a]/5 to-white">
       {/* Sidebar Component */}
@@ -90,8 +117,7 @@ export function DashboardMobile() {
         <div className="w-full max-w-[1800px] mx-auto">
           {/* Header */}
           <div className="sticky top-0 z-20 bg-gradient-to-r from-[#5b468a] to-[#4a3771] text-white px-4 md:px-8 lg:px-12 py-6 shadow-lg">
-            {currentView !== "registrasiUjianSusulan" &&
-              currentView !== "pendaftaranWisuda" &&
+            {currentView !== "pendaftaranWisuda" &&
               currentView !== "pengajuanBebasPustaka" && (
                 <>
                   <div className="flex items-center justify-between mb-4 gap-4">
@@ -102,6 +128,14 @@ export function DashboardMobile() {
                       >
                         <Menu className="w-6 h-6" />
                       </button>
+                      {(currentView === "kuesioner" || currentView === "detailRekapKuliah") && (
+                        <button
+                          className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition"
+                          onClick={handleBackClick}
+                        >
+                          <ChevronLeft className="w-6 h-6" />
+                        </button>
+                      )}
                       {currentView !== "dashboard" && (
                         <h1 className="font-bold text-lg md:text-xl">
                           {getPageTitle()}

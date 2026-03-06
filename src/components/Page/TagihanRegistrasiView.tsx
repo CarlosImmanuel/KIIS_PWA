@@ -89,7 +89,7 @@ export function TagihanRegistrasiView({ onDetailClick }: TagihanRegistrasiViewPr
   return (
     <div className="min-h-screen bg-gray-50 pb-24">
       {/* Content */}
-      <div className="px-4 pt-4 space-y-4">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 space-y-4">
         {/* Info Banner */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-4 shadow-lg text-white">
           <div className="flex items-start gap-3">

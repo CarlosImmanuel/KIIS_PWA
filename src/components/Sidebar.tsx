@@ -31,6 +31,10 @@ export function Sidebar({ showMenu, setShowMenu, onNavigate }: SidebarProps) {
       "Jadwal Mahasiswa": { view: "jadwalMahasiswa", tab: "jadwal" },
       "Jadwal Ujian Mahasiswa": { view: "jadwalUjianMahasiswa", tab: "jadwal" },
       Kuesioner: { view: "kuesioner", tab: "kuesioner" },
+      "Beranda Registrasi": { 
+        view: "berandaRegistrasi", 
+        tab: "registrasiMataKuliah" 
+      },
       "Registrasi Mata Kuliah": {
         view: "registrasiMataKuliah",
         tab: "registrasiMataKuliah",
@@ -205,6 +209,8 @@ export function Sidebar({ showMenu, setShowMenu, onNavigate }: SidebarProps) {
                               );
                             } else if (subMenu.label === "Rekap Kuliah") {
                               handleMenuClick("Rekap Kuliah");
+                            } else if (subMenu.label === "Beranda Registrasi") {
+                              handleMenuClick("Beranda Registrasi");
                             } else if (
                               subMenu.label === "Registrasi Mata Kuliah"
                             ) {

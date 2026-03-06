@@ -16,7 +16,7 @@ export function StatusRegistrasiView({ }: StatusRegistrasiViewProps) {
     <div className="min-h-screen bg-gray-50 pb-24">
 
       {/* Content */}
-      <div className="px-4 pt-4 space-y-4">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 space-y-4">
         {/* Title Card */}
         <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] rounded-2xl p-4 shadow-lg">
           <h2 className="text-center font-bold text-sm text-white leading-relaxed">
@@ -33,8 +33,8 @@ export function StatusRegistrasiView({ }: StatusRegistrasiViewProps) {
               </div>
               <div className="flex-1">
                 <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mb-0.5">Mahasiswa</p>
-                <p className="text-xs font-bold text-gray-800">REVALDY JAYA</p>
-                <p className="text-[10px] text-gray-600">222310044</p>
+                <p className="text-xs font-bold text-gray-800">Carlos Immanuel Tampubolon</p>
+                <p className="text-[10px] text-gray-600">222310064</p>
               </div>
             </div>
 

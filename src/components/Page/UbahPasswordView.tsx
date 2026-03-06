@@ -60,7 +60,7 @@ export function UbahPasswordView({ onBack, onMenuToggle }: UbahPasswordViewProps
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#5b468a]/5 to-white pb-24">
-      <div className="px-4 py-6 space-y-6">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-6 space-y-6">
         {/* Security Info Banner */}
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-xl p-4 shadow-sm">
           <div className="flex gap-3">

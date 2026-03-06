@@ -7,6 +7,7 @@ import { DetailRekapKuliahView } from "../Page/DetailRekapKuliahView";
 import { JadwalMahasiswaView } from "../Page/JadwalMahasiswaView";
 import { JadwalUjianMahasiswaView } from "../Page/JadwalUjianMahasiswaView";
 import { KuesionerView } from "../Page/KuesionerView";
+import { BerandaRegistrasiView } from "../Page/BerandaRegistrasi";
 import { RegistrasiMataKuliahView } from "../Page/RegistrasiMataKuliahView";
 import { StatusRegistrasiView } from "../Page/StatusRegistrasiView";
 import { TagihanRegistrasiView } from "../Page/TagihanRegistrasiView";
@@ -102,6 +103,14 @@ export function AppRouter({
           onBack={() => onBack("jadwalUjianMahasiswa", "jadwal")}
           onMenuToggle={onMenuToggle}
           mataKuliah={selectedMataKuliah}
+        />
+      );
+
+    case "berandaRegistrasi":
+      return (
+        <BerandaRegistrasiView
+          onBack={() => onBack("dashboard", "home")}
+          onMenuToggle={onMenuToggle}
         />
       );
 

@@ -34,7 +34,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Pengenalan Python + Pengolahan Citra',
       status: 'HADIR'
     },
@@ -46,7 +46,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Operasi Piksel dan Histogram',
       status: 'HADIR'
     },
@@ -58,7 +58,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Perbaikan Kualitas Citra pada Domain Spasial',
       status: 'HADIR'
     },
@@ -70,7 +70,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Perbaikan Kualitas Citra Pada Domain Frekuensi',
       status: 'HADIR'
     },
@@ -82,7 +82,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Image Restoration',
       status: 'HADIR'
     },
@@ -94,7 +94,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Color Image Processing',
       status: 'HADIR'
     },
@@ -106,7 +106,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Quiz #1',
       status: 'HADIR'
     },
@@ -118,7 +118,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Wavelet dan Multiresolution Processing',
       status: 'HADIR'
     },
@@ -130,7 +130,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Image Compression',
       status: 'HADIR'
     },
@@ -142,7 +142,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Morfologi Citra',
       status: 'HADIR'
     },
@@ -154,7 +154,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Segmentasi Citra & Ekstrasi Fitur',
       status: 'HADIR'
     },
@@ -166,7 +166,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Aplikasi Temu Kembali Citra',
       status: 'HADIR'
     },
@@ -178,7 +178,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Pembahasan Tugas dan Kuis',
       status: 'HADIR'
     },
@@ -190,7 +190,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
       ruangan: '215',
       mataKuliah: 'LAB. PENGOLAHAN CITRA',
       kelas: 'TI-22-PA',
-      dosen: 'Raiden Rayhan Pratama Rakhmadi, S.Kom., MTCNA',
+      dosen: 'Raden Rayyan Pratama Rakhmadie, S.Kom., MTCNA',
       materi: 'Quiz #2',
       status: 'HADIR'
     }
@@ -204,7 +204,7 @@ export function DetailRekapKuliahView({ mataKuliah, kode }: DetailRekapKuliahVie
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#5b468a]/5 to-white pb-24">
-      <div className="px-4 py-6 space-y-6">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-6 space-y-6">
         {/* Info Card */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
           <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] px-5 py-4">

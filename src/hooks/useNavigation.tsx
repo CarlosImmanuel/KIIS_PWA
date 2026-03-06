@@ -11,6 +11,7 @@ export type ViewType =
   | "jadwalMahasiswa"
   | "jadwalUjianMahasiswa"
   | "kuesioner"
+  | "berandaRegistrasi"
   | "registrasiMataKuliah"
   | "statusRegistrasi"
   | "tagihanRegistrasi"
@@ -61,6 +62,7 @@ export function useNavigation() {
       jadwalMahasiswa: "Jadwal Mahasiswa",
       jadwalUjianMahasiswa: "Jadwal Ujian",
       kuesioner: "Kuesioner",
+      berandaRegistrasi: "Beranda Registrasi",
       registrasiMataKuliah: "Registrasi Mata Kuliah",
       statusRegistrasi: "Status Registrasi",
       tagihanRegistrasi: "Tagihan Registrasi",

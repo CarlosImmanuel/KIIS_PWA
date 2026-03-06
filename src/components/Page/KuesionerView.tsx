@@ -95,7 +95,7 @@ export function KuesionerView({ onBack, mataKuliah }: KuesionerViewProps) {
   return (
     <div className="pb-24 bg-gray-50 min-h-screen">
       {/* Mata Kuliah Info Cards */}
-      <div className="px-4 pt-4 pb-6 bg-white shadow-sm">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-6 bg-white shadow-sm">
         <div className="space-y-2">
           <div className="bg-gradient-to-r from-[#5b468a]/10 to-blue-50 rounded-xl p-3 border border-[#5b468a]/20">
             <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export function KuesionerView({ onBack, mataKuliah }: KuesionerViewProps) {
       </div>
 
       {/* Kuesioner Questions */}
-      <div className="px-4 pt-4 pb-6 space-y-4">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-6 space-y-4">
         {kuesionerData.map((item, index) => (
           <div 
             key={item.id}

@@ -13,7 +13,17 @@ export function NilaiView({ onNavigateToDetail }: NilaiViewProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedMataKuliah, setSelectedMataKuliah] = useState<typeof mataKuliah[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const itemsPerPage = 15;
+
+  const handleCloseModal = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setIsClosing(false);
+      setSelectedMataKuliah(null);
+    }, 300); // Match with animation duration
+  };
 
   const studentInfo = {
     npm: '222310064',
@@ -326,33 +336,83 @@ export function NilaiView({ onNavigateToDetail }: NilaiViewProps) {
         </div>
       </div>
 
-      {/* Modal Detail Nilai with Slide Animation */}
+      {/* Modal Detail Nilai */}
       {isModalOpen && selectedMataKuliah && (
         <>
+          <style>{`
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+            
+            @keyframes fadeOut {
+              from {
+                opacity: 1;
+              }
+              to {
+                opacity: 0;
+              }
+            }
+            
+            @keyframes slideUp {
+              from {
+                transform: translateY(100%);
+                opacity: 0;
+              }
+              to {
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+            
+            @keyframes slideDown {
+              from {
+                transform: translateY(0);
+                opacity: 1;
+              }
+              to {
+                transform: translateY(100%);
+                opacity: 0;
+              }
+            }
+          `}</style>
+          
           {/* Backdrop with fade animation */}
           <div 
-            className="fixed inset-0 bg-black/60 z-50 animate-in fade-in duration-300"
-            onClick={() => setIsModalOpen(false)}
+            className="fixed inset-0 z-50 bg-black/60"
+            style={{ 
+              animation: isClosing ? 'fadeOut 0.3s ease-out' : 'fadeIn 0.3s ease-out',
+              animationFillMode: 'forwards'
+            }}
+            onClick={handleCloseModal}
           />
           
-          {/* Modal Content with slide up animation */}
-          <div className="fixed inset-x-0 bottom-0 md:top-20 z-50 overflow-hidden animate-in slide-in-from-bottom duration-500 ease-out">
-            <div className="bg-white h-full rounded-t-3xl shadow-2xl overflow-y-auto max-w-[800px] mx-auto">
+          {/* Modal with slide up animation */}
+          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 pointer-events-none">
+            <div 
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] sm:max-h-[calc(100vh-2rem)] flex flex-col pointer-events-auto"
+              style={{ 
+                animation: isClosing ? 'slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                animationFillMode: 'forwards'
+              }}
+            >
               {/* Header */}
-              <div className="sticky top-0 z-10 bg-gradient-to-r from-[#5b468a] to-[#4a3771] px-5 py-4 rounded-t-3xl">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-white font-bold text-lg">Detail Nilai</h2>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="text-white hover:bg-white/20 p-2 rounded-lg transition-all active:scale-95"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                </div>
+              <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] text-white px-4 py-4 rounded-t-2xl flex items-center justify-between flex-shrink-0">
+                <h3 className="font-bold text-base">Detail Nilai</h3>
+                <button
+                  onClick={handleCloseModal}
+                  className="p-2 hover:bg-white/10 rounded-lg transition"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
               {/* Content */}
-              <div className="px-5 py-5 space-y-4">
+              <div className="p-4 space-y-4 overflow-y-auto">
                 {/* Mata Kuliah Info */}
                 <div className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
                   <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] px-4 py-3">
@@ -483,9 +543,6 @@ export function NilaiView({ onNavigateToDetail }: NilaiViewProps) {
                     </div>
                   </div>
                 </div>
-
-                {/* Spacing for bottom padding */}
-                <div className="h-4"></div>
               </div>
             </div>
           </div>

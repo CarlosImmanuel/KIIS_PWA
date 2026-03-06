@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { FileText, Upload, Calendar, BookOpen, AlertCircle, CheckCircle2, X, ChevronDown, Search, Clock, ChevronLeft, Menu } from "lucide-react";
+import { FileText, Upload, Calendar, BookOpen, AlertCircle, CheckCircle2, X, ChevronDown, Search, Clock } from "lucide-react";
 
 interface RegistrasiUjianSusulanViewProps {
   onBack?: () => void;
   onMenuToggle?: () => void;
 }
 
-export function RegistrasiUjianSusulanView({ onBack, onMenuToggle }: RegistrasiUjianSusulanViewProps) {
+export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onMenuToggle }: RegistrasiUjianSusulanViewProps) {
   const [showModal, setShowModal] = useState(false);
   const [tahunAjar, setTahunAjar] = useState("");
   const [semester, setSemester] = useState("");
@@ -76,27 +76,8 @@ export function RegistrasiUjianSusulanView({ onBack, onMenuToggle }: RegistrasiU
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#5b468a]/5 to-white pb-24">
-      {/* Header */}
-      <div className="sticky top-0 z-20 bg-gradient-to-r from-[#5b468a] to-[#4a3771] text-white px-4 py-4 shadow-lg">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={onBack}
-            className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <h1 className="font-bold text-lg flex-1">Registrasi Ujian Susulan</h1>
-          <button
-            onClick={onMenuToggle}
-            className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-      </div>
-
-      <div className="px-4 py-6 space-y-5">
+    <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-6 space-y-5">
         {/* Info Card - Prosedur */}
         <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-[#5b468a]/10">
           <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] px-4 py-3 flex items-center gap-3">

@@ -90,7 +90,7 @@ export function JadwalUjianMahasiswaView({ onKuesionerClick }: JadwalUjianMahasi
 
   return (
     <>
-    <div className="px-4 pt-4 pb-2">
+    <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-2">
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-5">
           <div className="flex items-start gap-3">
             <div className="bg-gradient-to-br from-[#5b468a] to-[#4a3771] p-3 rounded-xl">
@@ -106,7 +106,7 @@ export function JadwalUjianMahasiswaView({ onKuesionerClick }: JadwalUjianMahasi
     
     <div className="pb-24">
       {/* Filter Section */}
-      <div className="px-4 py-4 space-y-4">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-4 space-y-4">
         {/* Filters */}
         <div className="grid grid-cols-2 gap-3">
           {/* Tahun Ajaran Dropdown */}
@@ -215,7 +215,7 @@ export function JadwalUjianMahasiswaView({ onKuesionerClick }: JadwalUjianMahasi
 
       {/* Info Message */}
       {!showTable && (
-        <div className="px-4 pb-6">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-2">
           <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-4 flex items-start gap-3">
             <AlertCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
             <p className="text-sm text-orange-700">
@@ -227,7 +227,7 @@ export function JadwalUjianMahasiswaView({ onKuesionerClick }: JadwalUjianMahasi
 
       {/* Title Section - Only show when table is visible */}
       {showTable && (
-        <div className="px-4 mb-4">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 mb-4">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-gray-800 flex items-center gap-2">
               <FileText className="w-5 h-5 text-[#5b468a]" />
@@ -242,7 +242,7 @@ export function JadwalUjianMahasiswaView({ onKuesionerClick }: JadwalUjianMahasi
 
       {/* Table Section - Only show when all filters are selected */}
       {showTable && (
-        <div className="px-4 pb-6">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pb-6">
           {/* Table */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
             <table className="w-full">

@@ -128,7 +128,7 @@ export function DetailTagihanView({ tagihan }: DetailTagihanViewProps) {
       </div>
 
       {/* Content */}
-      <div className="px-4 pt-4 space-y-4">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 space-y-4">
         {activeTab === 'informasi' ? (
           <>
             {/* Status Badge */}

@@ -94,7 +94,7 @@ export function JadwalMahasiswaView({ }: JadwalMahasiswaViewProps) {
   return (
     <>
       {/* Student Info Card */}
-      <div className="px-4 pt-4 pb-2">
+      <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pt-4 pb-2">
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-5">
           <div className="flex items-start gap-3">
             <div className="bg-gradient-to-br from-[#5b468a] to-[#4a3771] p-3 rounded-xl">
@@ -110,7 +110,7 @@ export function JadwalMahasiswaView({ }: JadwalMahasiswaViewProps) {
     
       <div className="pb-24">
         {/* Filter Section */}
-        <div className="px-4 py-6 space-y-4">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-6 space-y-4">
           {/* Filters */}
           <div className="grid grid-cols-2 gap-3">
             {/* Tahun Akademik Dropdown */}
@@ -182,7 +182,7 @@ export function JadwalMahasiswaView({ }: JadwalMahasiswaViewProps) {
         </div>
 
         {/* Title Section */}
-        <div className="px-4 mb-4">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 mb-4">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-gray-800 flex items-center gap-2">
               <BookOpen className="w-5 h-5 text-[#5b468a]" />
@@ -195,7 +195,7 @@ export function JadwalMahasiswaView({ }: JadwalMahasiswaViewProps) {
         </div>
 
         {/* Table Section */}
-        <div className="px-4 pb-6">
+        <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 pb-6">
           {/* Table */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
             <table className="w-full">
