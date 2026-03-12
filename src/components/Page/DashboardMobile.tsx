@@ -117,41 +117,36 @@ export function DashboardMobile() {
         <div className="w-full max-w-[1800px] mx-auto">
           {/* Header */}
           <div className="sticky top-0 z-20 bg-gradient-to-r from-[#5b468a] to-[#4a3771] text-white px-4 md:px-8 lg:px-12 py-6 shadow-lg">
-            {currentView !== "pendaftaranWisuda" &&
-              currentView !== "pengajuanBebasPustaka" && (
-                <>
-                  <div className="flex items-center justify-between mb-4 gap-4">
-                    <div className="flex items-center gap-3">
-                      <button
-                        className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition"
-                        onClick={() => setShowMenu(!showMenu)}
-                      >
-                        <Menu className="w-6 h-6" />
-                      </button>
-                      {(currentView === "kuesioner" || currentView === "detailRekapKuliah") && (
-                        <button
-                          className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition"
-                          onClick={handleBackClick}
-                        >
-                          <ChevronLeft className="w-6 h-6" />
-                        </button>
-                      )}
-                      {currentView !== "dashboard" && (
-                        <h1 className="font-bold text-lg md:text-xl">
-                          {getPageTitle()}
-                        </h1>
-                      )}
-                    </div>
-                    {currentView === "dashboard" && (
-                      <img
-                        src={kiisLogoPutih}
-                        alt="KIIS Logo"
-                        className="h-12 object-contain"
-                      />
-                    )}
-                  </div>
-                </>
+            <div className="flex items-center justify-between mb-4 gap-4">
+              <div className="flex items-center gap-3">
+                <button
+                  className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition"
+                  onClick={() => setShowMenu(!showMenu)}
+                >
+                  <Menu className="w-6 h-6" />
+                </button>
+                {(currentView === "kuesioner" || currentView === "detailRekapKuliah") && (
+                  <button
+                    className="bg-white/20 backdrop-blur-sm text-white p-2 rounded-lg hover:bg-white/30 transition"
+                    onClick={handleBackClick}
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                )}
+                {currentView !== "dashboard" && (
+                  <h1 className="font-bold text-lg md:text-xl">
+                    {getPageTitle()}
+                  </h1>
+                )}
+              </div>
+              {currentView === "dashboard" && (
+                <img
+                  src={kiisLogoPutih}
+                  alt="KIIS Logo"
+                  className="h-12 object-contain"
+                />
               )}
+            </div>
           </div>
 
           {/* Main Content - Route based on currentView */}

@@ -55,6 +55,18 @@ export function Sidebar({ showMenu, setShowMenu, onNavigate }: SidebarProps) {
         view: "registrasiUjianSusulan",
         tab: "registrasiUjianSusulan",
       },
+      "Beranda Wisuda": {
+        view: "berandaWisuda",
+        tab: "berandaWisuda",
+      },
+      "Pendaftaran Wisuda": {
+        view: "pendaftaranWisuda",
+        tab: "pendaftaranWisuda",
+      },
+      "Pengajuan Bebas Pustaka": {
+        view: "pengajuanBebasPustaka",
+        tab: "pengajuanBebasPustaka",
+      },
     };
 
     const action = menuActions[label];
@@ -123,7 +135,7 @@ export function Sidebar({ showMenu, setShowMenu, onNavigate }: SidebarProps) {
       label: "Wisuda",
       color: "bg-pink-500",
       subMenus: [
-        { label: "Beranda" },
+        { label: "Beranda Wisuda" },
         { label: "Pendaftaran Wisuda" },
         { label: "Pengajuan Bebas Pustaka" },
       ],
@@ -223,7 +235,11 @@ export function Sidebar({ showMenu, setShowMenu, onNavigate }: SidebarProps) {
                               subMenu.label === "Tagihan Registrasi"
                             ) {
                               handleMenuClick("Tagihan Registrasi");
-                            }
+                            } else if (subMenu.label === "Beranda Wisuda") {
+                              handleMenuClick("Beranda Wisuda");                            } else if (subMenu.label === "Pendaftaran Wisuda") {
+                              handleMenuClick("Pendaftaran Wisuda");
+                            } else if (subMenu.label === "Pengajuan Bebas Pustaka") {
+                              handleMenuClick("Pengajuan Bebas Pustaka");                            }
                           }}
                         >
                           <div className="w-1.5 h-1.5 rounded-full bg-[#5b468a] group-hover:scale-150 transition-transform"></div>

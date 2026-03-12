@@ -17,6 +17,7 @@ export type ViewType =
   | "tagihanRegistrasi"
   | "detailTagihan"
   | "registrasiUjianSusulan"
+  | "berandaWisuda"
   | "pendaftaranWisuda"
   | "pengajuanBebasPustaka";
 
@@ -68,6 +69,7 @@ export function useNavigation() {
       tagihanRegistrasi: "Tagihan Registrasi",
       detailTagihan: "Detail Tagihan",
       registrasiUjianSusulan: "Registrasi Ujian Susulan",
+      berandaWisuda: "Beranda Wisuda",
       pendaftaranWisuda: "Pendaftaran Wisuda",
       pengajuanBebasPustaka: "Pengajuan Bebas Pustaka",
     };

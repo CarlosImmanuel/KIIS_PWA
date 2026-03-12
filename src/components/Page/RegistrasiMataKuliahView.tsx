@@ -33,12 +33,21 @@ export function RegistrasiMataKuliahView({
 }: RegistrasiMataKuliahViewProps) {
   const [showPreviewJadwal, setShowPreviewJadwal] =
     useState(false);
+  const [isClosingPreview, setIsClosingPreview] = useState(false);
   const [selectedTab, setSelectedTab] = useState(1);
   const [selectedMataKuliah, setSelectedMataKuliah] = useState<
     MataKuliah[]
   >([]);
   const [kelasDropdown, setKelasDropdown] =
     useState("TI-22-PA");
+
+  const handleClosePreviewJadwal = () => {
+    setIsClosingPreview(true);
+    setTimeout(() => {
+      setShowPreviewJadwal(false);
+      setIsClosingPreview(false);
+    }, 300);
+  };
 
   // Data untuk SEBELUM registrasi (status = 0)
   const mataKuliahTersedia: MataKuliah[] = [
@@ -624,14 +633,26 @@ export function RegistrasiMataKuliahView({
 
         {/* Preview Jadwal Modal - sama untuk kedua status */}
         {showPreviewJadwal && (
-          <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 overflow-y-auto">
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl my-4">
+          <div
+            className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 overflow-y-auto"
+            style={{
+              animation: isClosingPreview ? 'fadeOut 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              animationFillMode: 'forwards'
+            }}
+          >
+            <div
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl my-4"
+              style={{
+                animation: isClosingPreview ? 'zoomOut 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                animationFillMode: 'forwards'
+              }}
+            >
               <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] text-white px-4 py-4 rounded-t-2xl flex items-center justify-between sticky top-0">
                 <h3 className="font-bold text-base">
                   Preview Jadwal
                 </h3>
                 <button
-                  onClick={() => setShowPreviewJadwal(false)}
+                  onClick={handleClosePreviewJadwal}
                   className="p-2 hover:bg-white/10 rounded-lg transition"
                 >
                   <X className="w-5 h-5" />
@@ -740,6 +761,66 @@ export function RegistrasiMataKuliahView({
             </div>
           </div>
         )}
+
+        <style>{`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes fadeOut {
+            from {
+              opacity: 1;
+            }
+            to {
+              opacity: 0;
+            }
+          }
+
+          @keyframes zoomIn {
+            from {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          @keyframes zoomOut {
+            from {
+              opacity: 1;
+              transform: scale(1);
+            }
+            to {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+          }
+
+          @keyframes slideUp {
+            from {
+              transform: translateY(100%);
+            }
+            to {
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slideDown {
+            from {
+              transform: translateY(0);
+            }
+            to {
+              transform: translateY(100%);
+            }
+          }
+        `}</style>
       </>
     );
   }
@@ -941,14 +1022,26 @@ export function RegistrasiMataKuliahView({
 
       {/* Preview Jadwal Modal - sama untuk kedua status */}
       {showPreviewJadwal && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl my-4">
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 overflow-y-auto"
+          style={{
+            animation: isClosingPreview ? 'fadeOut 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            animationFillMode: 'forwards'
+          }}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl my-4"
+            style={{
+              animation: isClosingPreview ? 'zoomOut 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              animationFillMode: 'forwards'
+            }}
+          >
             <div className="bg-gradient-to-r from-[#5b468a] to-[#4a3771] text-white px-4 py-4 rounded-t-2xl flex items-center justify-between sticky top-0">
               <h3 className="font-bold text-base">
                 Preview Jadwal
               </h3>
               <button
-                onClick={() => setShowPreviewJadwal(false)}
+                onClick={handleClosePreviewJadwal}
                 className="p-2 hover:bg-white/10 rounded-lg transition"
               >
                 <X className="w-5 h-5" />
@@ -1057,6 +1150,66 @@ export function RegistrasiMataKuliahView({
           </div>
         </div>
       )}
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+          }
+        }
+
+        @keyframes zoomIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes zoomOut {
+          from {
+            opacity: 1;
+            transform: scale(1);
+          }
+          to {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            transform: translateY(100%);
+          }
+          to {
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideDown {
+          from {
+            transform: translateY(0);
+          }
+          to {
+            transform: translateY(100%);
+          }
+        }
+      `}</style>
     </>
   );
 }

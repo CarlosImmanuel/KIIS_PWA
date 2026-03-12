@@ -13,8 +13,9 @@ import { StatusRegistrasiView } from "../Page/StatusRegistrasiView";
 import { TagihanRegistrasiView } from "../Page/TagihanRegistrasiView";
 import { DetailTagihanView } from "../Page/DetailTagihanView";
 import { RegistrasiUjianSusulanView } from "../Page/RegistrasiUjianSusulanView";
-// import { PendaftaranWisudaView } from "../Page/PendaftaranWisudaView";
-// import { PengajuanBebasPustakaView } from "../Page/PengajuanBebasPustakaView";
+import { BerandaWisudaView } from "../Page/BerandaWisudaView";
+import { PendaftaranWisudaView } from "../Page/PendaftaranWisudaView";
+import { PengajuanBebasPustakaView } from "../Page/PengajuanBebasPustakaView";
 
 interface AppRouterProps {
   currentView: ViewType;
@@ -156,21 +157,29 @@ export function AppRouter({
         />
       );
 
-    // case "pendaftaranWisuda":
-    //   return (
-    //     <PendaftaranWisudaView
-    //       onBack={() => onBack("dashboard", "home")}
-    //       onMenuToggle={onMenuToggle}
-    //     />
-    //   );
+    case "berandaWisuda":
+      return (
+        <BerandaWisudaView
+          onBack={() => onBack("dashboard", "home")}
+          onMenuToggle={onMenuToggle}
+        />
+      );
 
-    // case "pengajuanBebasPustaka":
-    //   return (
-    //     <PengajuanBebasPustakaView
-    //       onBack={() => onBack("dashboard", "home")}
-    //       onMenuToggle={onMenuToggle}
-    //     />
-    //   );
+    case "pendaftaranWisuda":
+      return (
+        <PendaftaranWisudaView
+          onBack={() => onBack("dashboard", "home")}
+          onMenuToggle={onMenuToggle}
+        />
+      );
+
+    case "pengajuanBebasPustaka":
+      return (
+        <PengajuanBebasPustakaView
+          onBack={() => onBack("dashboard", "home")}
+          onMenuToggle={onMenuToggle}
+        />
+      );
 
     default:
       return null;

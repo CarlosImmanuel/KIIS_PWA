@@ -8,6 +8,7 @@ interface RegistrasiUjianSusulanViewProps {
 
 export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onMenuToggle }: RegistrasiUjianSusulanViewProps) {
   const [showModal, setShowModal] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const [tahunAjar, setTahunAjar] = useState("");
   const [semester, setSemester] = useState("");
   const [jenisUjian, setJenisUjian] = useState("");
@@ -55,6 +56,14 @@ export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onM
     }
   };
 
+  const handleCloseModal = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowModal(false);
+      setIsClosing(false);
+    }, 300);
+  };
+
   const handleSubmit = () => {
     // Handle form submission
     console.log({
@@ -65,14 +74,16 @@ export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onM
       alasan,
       selectedFile,
     });
-    setShowModal(false);
+    handleCloseModal();
     // Reset form
-    setTahunAjar("");
-    setSemester("");
-    setJenisUjian("");
-    setMataKuliah("");
-    setAlasan("");
-    setSelectedFile(null);
+    setTimeout(() => {
+      setTahunAjar("");
+      setSemester("");
+      setJenisUjian("");
+      setMataKuliah("");
+      setAlasan("");
+      setSelectedFile(null);
+    }, 300);
   };
 
   return (
@@ -319,13 +330,25 @@ export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onM
 
       {/* Modal Form Registrasi */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
-          <div className="bg-white w-full sm:max-w-lg sm:rounded-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto animate-slide-up">
+        <div
+          className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
+          style={{
+            animation: isClosing ? 'fadeOut 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            animationFillMode: 'forwards'
+          }}
+        >
+          <div
+            className="bg-white w-full sm:max-w-lg sm:rounded-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto"
+            style={{
+              animation: isClosing ? 'slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              animationFillMode: 'forwards'
+            }}
+          >
             {/* Modal Header */}
             <div className="sticky top-0 bg-gradient-to-r from-[#5b468a] to-[#4a3771] px-5 py-4 flex items-center justify-between z-10">
               <h3 className="font-bold text-white text-lg">Registrasi Ujian Susulan</h3>
               <button
-                onClick={() => setShowModal(false)}
+                onClick={handleCloseModal}
                 className="p-1.5 hover:bg-white/20 rounded-lg transition"
               >
                 <X className="w-5 h-5 text-white" />
@@ -469,7 +492,7 @@ export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onM
               {/* Action Buttons */}
               <div className="flex gap-3 pt-2">
                 <button
-                  onClick={() => setShowModal(false)}
+                  onClick={handleCloseModal}
                   className="flex-1 bg-gray-100 text-gray-700 py-3 px-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors"
                 >
                   Batal
@@ -487,7 +510,25 @@ export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onM
       )}
 
       <style>{`
-        @keyframes slide-up {
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+          }
+        }
+
+        @keyframes slideUp {
           from {
             transform: translateY(100%);
           }
@@ -496,8 +537,13 @@ export function RegistrasiUjianSusulanView({ onBack: _onBack, onMenuToggle: _onM
           }
         }
 
-        .animate-slide-up {
-          animation: slide-up 0.3s ease-out;
+        @keyframes slideDown {
+          from {
+            transform: translateY(0);
+          }
+          to {
+            transform: translateY(100%);
+          }
         }
       `}</style>
     </div>
