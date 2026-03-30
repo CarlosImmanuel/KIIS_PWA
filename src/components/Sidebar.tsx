@@ -9,7 +9,9 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import kiisLogo from "../assets/Images/kisLogoUngu.png";
+import { clearAuthSession } from "../lib/auth";
 
 interface SidebarProps {
   showMenu: boolean;
@@ -18,8 +20,14 @@ interface SidebarProps {
 }
 
 export function Sidebar({ showMenu, setShowMenu, onNavigate }: SidebarProps) {
+  const navigate = useNavigate();
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
   const [expandedSubMenu, setExpandedSubMenu] = useState<string | null>(null);
+
+  const handleLogout = () => {
+    clearAuthSession();
+    navigate("/", { replace: true });
+  };
 
   const handleMenuClick = (label: string) => {
     const menuActions: { [key: string]: { view: string; tab: string } } = {
@@ -281,7 +289,10 @@ export function Sidebar({ showMenu, setShowMenu, onNavigate }: SidebarProps) {
           </div>
 
           <div className="mt-6 pt-6 border-t border-gray-200">
-            <button className="w-full flex items-center gap-4 p-4 bg-red-50 hover:bg-red-100 rounded-xl transition-all border border-red-200">
+            <button
+              onClick={handleLogout}
+              className="w-full flex items-center gap-4 p-4 bg-red-50 hover:bg-red-100 rounded-xl transition-all border border-red-200"
+            >
               <div className="bg-red-500 w-11 h-11 rounded-xl flex items-center justify-center shadow-md">
                 <LogOut className="w-6 h-6 text-white" />
               </div>

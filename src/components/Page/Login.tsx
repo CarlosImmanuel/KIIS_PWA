@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Lock, User, MapPin, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
+import { isAuthenticated, loginMahasiswa } from '../../lib/auth';
 import logoImage from '../../assets/Images/kisLogoUngu.png';
 import kampusMerdekaLogo from '../../assets/Images/kampusmerdeka.png';
 import ibikLogo from '../../assets/Images/logoIBIK.png';
@@ -13,12 +14,39 @@ export default function App() {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleLogin = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (isAuthenticated()) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [navigate]);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login attempt:', { username, password });
-    // Redirect to dashboard
-    navigate('/dashboard');
+
+    if (!username.trim() || !password.trim()) {
+      setErrorMessage('Username dan password wajib diisi.');
+      return;
+    }
+
+    setErrorMessage(null);
+    setIsSubmitting(true);
+
+    try {
+      await loginMahasiswa({
+        username: username.trim(),
+        password,
+      });
+
+      navigate('/dashboard', { replace: true });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Login gagal.';
+      setErrorMessage(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -68,6 +96,7 @@ export default function App() {
                     placeholder="Masukkan username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
+                    disabled={isSubmitting}
                     className="pl-10 h-12 md:h-14 text-base bg-white border-slate-300 focus:border-[#5b468a] focus:ring-[#5b468a] shadow-sm hover:shadow-md transition-all duration-300"
                   />
                 </div>
@@ -86,6 +115,7 @@ export default function App() {
                     placeholder="Masukkan password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    disabled={isSubmitting}
                     className="pl-10 pr-12 h-12 md:h-14 text-base bg-white border-slate-300 focus:border-[#5b468a] focus:ring-[#5b468a] shadow-sm hover:shadow-md transition-all duration-300"
                   />
                   <button
@@ -102,12 +132,19 @@ export default function App() {
                 </div>
               </div>
 
+              {errorMessage && (
+                <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                  {errorMessage}
+                </div>
+              )}
+
               {/* Login Button */}
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full h-12 md:h-14 text-base md:text-lg bg-[#5b468a] hover:bg-[#4a3670] text-white font-medium transition-all duration-300 hover:scale-[1.02]"
               >
-                Login
+                {isSubmitting ? 'Memproses...' : 'Login'}
               </Button>
             </form>
           </motion.div>
