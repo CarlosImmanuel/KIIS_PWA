@@ -114,7 +114,10 @@ async function requestJson<T>(
 }
 
 export function apiAuth<T>(path: string, options: ApiRequestOptions = {}) {
-  return requestJson<T>("auth", path, { ...options, withAuth: false });
+  return requestJson<T>("auth", path, {
+    withAuth: options.withAuth ?? false,
+    ...options,
+  });
 }
 
 export function apiAkademik<T>(path: string, options: ApiRequestOptions = {}) {
