@@ -1,4 +1,4 @@
-import { apiAuth } from "./api";
+import { ApiError, apiAuth } from "./api";
 
 const ACCESS_TOKEN_KEY = "accessToken";
 
@@ -74,10 +74,28 @@ export async function loginMahasiswa({
     payload["cf-turnstile-response"] = captchaToken;
   }
 
-  const rawData = await apiAuth<LoginResponse>("/auth/login", {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
+  let rawData: LoginResponse;
+  try {
+    rawData = await apiAuth<LoginResponse>("/auth/login", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    });
+  } catch (error) {
+    if (error instanceof ApiError) {
+      const rawMessage = String(error.message ?? "").toLowerCase();
+      if (
+        error.status === 401 ||
+        error.status === 403 ||
+        rawMessage.includes("unauthorized") ||
+        rawMessage.includes("invalid token") ||
+        rawMessage.includes("invalid credentials")
+      ) {
+        throw new Error("Username atau password salah.");
+      }
+    }
+
+    throw error;
+  }
 
   if (rawData?.status !== undefined && rawData.status !== 200) {
     throw new Error(rawData?.message ?? "Login gagal. Cek username/password.");

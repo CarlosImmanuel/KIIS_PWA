@@ -114,30 +114,9 @@ export function DashboardContent() {
     {
       icon: UserCircle,
       title: "HelpDesk",
-      description: "+62 813-8988-8933",
+      description: "Website HelpDesk",
       color: "bg-gradient-to-br from-[#5b468a] to-[#4a3771]",
-      href: "https://wa.me/6281389888933",
-    },
-    {
-      icon: UserCircle,
-      title: "Kendala Akses",
-      description: "+62 8988-8988",
-      color: "bg-gradient-to-br from-blue-500 to-blue-600",
-      href: "https://wa.me/62898889888",
-    },
-    {
-      icon: UserCircle,
-      title: "Kendala Keuangan",
-      description: "+62 8988-8988",
-      color: "bg-gradient-to-br from-green-500 to-green-600",
-      href: "https://wa.me/62898889888",
-    },
-    {
-      icon: UserCircle,
-      title: "Layanan Terpadu",
-      description: "+62 895-3263-18795",
-      color: "bg-gradient-to-br from-pink-500 to-pink-600",
-      href: "https://wa.me/62895326318795",
+      href: "https://helpdesk.ibik.ac.id",
     },
     {
       icon: UserCircle,
@@ -152,6 +131,27 @@ export function DashboardContent() {
       description: "Buku Panduan",
       color: "bg-gradient-to-br from-red-500 to-red-600",
       href: "https://example.com/panduan-krs",
+    },
+    {
+      icon: UserCircle,
+      title: "Kendala Akses",
+      description: "+62 813-8988-8933",
+      color: "bg-gradient-to-br from-blue-500 to-blue-600",
+      href: "https://wa.me/6281389888933",
+    },
+    {
+      icon: UserCircle,
+      title: "Kendala Keuangan",
+      description: "+62 857-1000-1924",
+      color: "bg-gradient-to-br from-green-500 to-green-600",
+      href: "https://wa.me/85710001924",
+    },
+    {
+      icon: UserCircle,
+      title: "Layanan Terpadu",
+      description: "+62 895-3263-18795",
+      color: "bg-gradient-to-br from-pink-500 to-pink-600",
+      href: "https://wa.me/62895326318795",
     },
   ];
 

@@ -56,7 +56,10 @@ async function requestJson<T>(
   const token = sessionStorage.getItem("accessToken");
 
   const requestHeaders = new Headers(headers ?? {});
-  if (!requestHeaders.has("Content-Type") && restOptions.body) {
+  const isFormDataBody =
+    typeof FormData !== "undefined" && restOptions.body instanceof FormData;
+
+  if (!requestHeaders.has("Content-Type") && restOptions.body && !isFormDataBody) {
     requestHeaders.set("Content-Type", "application/json");
   }
   if (withAuth && token) {

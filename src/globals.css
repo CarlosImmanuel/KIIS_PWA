@@ -241,3 +241,41 @@
 html {
   font-size: var(--font-size);
 }
+
+/*
+ * App layout contract:
+ * - Content gets reserved space above the bottom nav.
+ * - Floating actions are anchored above the bottom nav + device safe area.
+ */
+:root {
+  --app-bottom-nav-height: 84px;
+  --app-floating-gap: 12px;
+  --app-floating-right: 16px;
+  --app-floating-right-desktop: 48px;
+}
+
+.page-safe-bottom {
+  padding-bottom: calc(
+    var(--app-bottom-nav-height) +
+    env(safe-area-inset-bottom, 0px) +
+    16px
+  );
+}
+
+.floating-safe-bottom {
+  bottom: calc(
+    var(--app-bottom-nav-height) +
+    env(safe-area-inset-bottom, 0px) +
+    var(--app-floating-gap)
+  );
+}
+
+.floating-safe-right {
+  right: max(var(--app-floating-right), env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 768px) {
+  .floating-safe-right {
+    right: var(--app-floating-right-desktop);
+  }
+}
